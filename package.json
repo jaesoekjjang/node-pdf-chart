@@ -1,0 +1,26 @@
+{
+  "name": "chartjs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx tsx index.tsx"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@react-pdf/renderer": "^3.4.4",
+    "canvas": "^2.11.2",
+    "chartjs-node-canvas": "^4.1.6",
+    "dotenv": "^16.4.5",
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "@types/react": "^18.3.3",
+    "tsx": "^4.16.2"
+  }
+}
