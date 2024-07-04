@@ -9,6 +9,7 @@ import {
 } from "@react-pdf/renderer";
 import { drawChartImage } from "./drawChart.js";
 import { argv } from "process";
+import { existsSync, mkdirSync } from "fs";
 import "dotenv/config";
 
 declare global {
@@ -19,7 +20,10 @@ declare global {
   }
 }
 
-const path = `${process.env.PDFDIR}/${argv[2] || "test.pdf"}`;
+existsSync("pdf") || mkdirSync("pdf");
+
+const name = argv[2] || "test";
+const path = `${process.env.PDFDIR}/${name}.pdf`;
 
 const styles = StyleSheet.create({
   page: {
@@ -40,7 +44,7 @@ const MyDocument = () => {
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.section}>
-          <Text>Chart Image</Text>
+          <Text>{name} 월간 보고서</Text>
           <Image src={img} />
         </View>
       </Page>
