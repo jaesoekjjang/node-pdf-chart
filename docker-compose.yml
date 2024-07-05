@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  pdf:
+    build: .
+    volumes:
+      - $PWD:/app
+      # 로컬 설치하는 경우
+      # - $PWD/src:/app/src
+      # - $PWD/pdf:/app/pdf
+    tty: true
+    command: /bin/bash
